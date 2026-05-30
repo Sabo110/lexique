@@ -31,7 +31,6 @@ def ajouter_mot(request):
 
         if form.is_valid():
             form.save()
-            print('formulaire save en bd')
             return redirect("liste")
 
     else:
