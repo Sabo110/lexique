@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row">
+
+    {% for mot in mots %}
+
+    <div class="col-md-4 mb-4">
+        <div class="card p-3 h-100">
+
+            <h3>Mot: {{ mot.terme }}</h3>
+
+            <p>Definition: {{ mot.definition }}</p>
+
+            <small>
+                Catégorie : {{ mot.categorie.nom }}
+            </small>
+
+        </div>
+    </div>
+
+    {% empty %}
+
+    <p>Aucun mot trouvé.</p>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

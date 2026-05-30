@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Ajouter un mot</h2>
+
+<form method="POST" action="{% url 'ajouter' %}" novalidate>
+
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="fieldWrapper">
+            {{ field.label_tag }} {{ field }}
+            {{ field.errors }}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-primary mt-4">
+        Ajouter
+    </button>
+
+</form>
+
+{% endblock %}
